@@ -1,41 +1,31 @@
 import java.util.List;
 
 public class Request {
-    private String startingLine;
-    private String headers;
-    private String message_body;
+    private String method;
+    private String path;
+    private List<String> headers;
+    private String messageBody;
 
-    public Request(String startingLine, String headers, String message_body) {
-        this.startingLine = startingLine;
+    public Request(String method, String path, List<String> headers, String messageBody) {
+        this.method = method;
+        this.path = path;
         this.headers = headers;
-        this.message_body = message_body;
-    }
-
-    public String getStartingLine() {
-        return startingLine;
-    }
-
-    public String getHeaders() {
-        return headers;
-    }
-
-    public String getMessage_body() {
-        return message_body;
+        this.messageBody = messageBody;
     }
 
     public String getMethod() {
-        final var parts = startingLine.split(" ");
-        if (parts.length != 3) {
-            return "";
-        }
-        return parts[0];
+        return method;
     }
 
     public String getPath() {
-        final var parts = startingLine.split(" ");
-        if (parts.length != 3) {
-            return "";
-        }
-        return parts[1];
+        return path;
+    }
+
+    public List<String> getHeaders() {
+        return headers;
+    }
+
+    public String getMessageBody() {
+        return messageBody;
     }
 }

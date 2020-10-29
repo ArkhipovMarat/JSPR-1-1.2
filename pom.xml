@@ -21,4 +21,12 @@
         </plugins>
     </build>
 
+    <dependencies>
+        <dependency>
+            <groupId>de.mirkosertic.bytecoder</groupId>
+            <artifactId>java.base</artifactId>
+            <version>2019-06-13</version>
+        </dependency>
+    </dependencies>
+
 </project>
